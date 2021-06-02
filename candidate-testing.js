@@ -11,7 +11,7 @@ let candidateName = "";
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["Who was the first American woman in space?", "True of false: 5 kilometer == 5000 meters?", "(5 + 3) / 2 * 10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+let questions = ["Who was the first American woman in space? ", "True of false: 5 kilometer == 5000 meters? ", "(5 + 3) / 2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "tue", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
@@ -24,8 +24,8 @@ function askForName() {
 function askQuestion() {
   // 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < questions.length; i++) {
-    let x = input.question(`${questions[i]} `);
-    candidateAnswers.unshift(x);
+    let answers = input.question(questions[i]);
+    candidateAnswers.push(answers);
   }
 }
 
