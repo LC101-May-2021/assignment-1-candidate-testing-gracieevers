@@ -42,13 +42,11 @@ function gradeQuiz(candidateAnswers) {
     for (let i = 0; i < candidateAnswers.length; i++) {
         let answer = candidateAnswers[i].toLowerCase();
         let correctAnswer = correctAnswers[i].toLowerCase();
-        console.log(answer);
-        console.log(correctAnswer);
+        console.log(`Your Answer: ${answer}`);
+        console.log(`Correct Answer: ${correctAnswer}`);
 
         if (answer == correctAnswer){
             correct = correct + 1;
-            console.log(correct);
-            console.log("Correct!")
         }
 
         // console.log(`Your Answer: ${candidateAnswers[i]} Correct Answer: ${correctAnswers[i]}`)
