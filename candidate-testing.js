@@ -6,13 +6,11 @@ const input = require('readline-sync');
 let candidateName = "";
 // 1.2a: Define question, correctAnswer, and candidateAnswer //
 
-
-
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["Who was the first American woman in space? ", "True of false: 5 kilometer == 5000 meters? ", "(5 + 3) / 2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
-let correctAnswers = ["Sally Ride", "tue", "40", "Trajectory", "3"];
+let questions = ["1) Who was the first American woman in space? ", "2) True of false: 5 kilometer == 5000 meters? ", "3) (5 + 3) / 2 * 10 = ? ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride", "True", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 function askForName() {
@@ -39,15 +37,27 @@ function gradeQuiz(candidateAnswers) {
   console.log("Incorrect. Try again.");
 }
 */
+    let correct = 0;
+    let numOfQuestions = questions.length;
+    for (let i = 0; i < candidateAnswers.length; i++) {
+        let answer = candidateAnswers[i].toLowerCase();
+        let correctAnswer = correctAnswers[i].toLowerCase();
+        console.log(answer);
+        console.log(correctAnswer);
 
-for (let i = 0; i < candidateAnswers.length; i++) {
-    console.log(`Your Answer: ${candidateAnswers[i]} Correct Answer: ${correctAnswers[i]}`)
-}
+        if (answer == correctAnswer){
+            correct = correct + 1;
+            console.log(correct);
+            console.log("Correct!")
+        }
 
-  let grade;
-  
+        // console.log(`Your Answer: ${candidateAnswers[i]} Correct Answer: ${correctAnswers[i]}`)
+    }
 
-  return grade;
+    let grade = (correct) / (numOfQuestions) * 100;
+    console.log(`${grade}%`);
+
+    return grade;
 }
 
 function runProgram() {
